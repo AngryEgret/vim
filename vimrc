@@ -37,9 +37,9 @@ set visualbell                    " No beeping.
 set mouse=a                       " Mouse integration
 
 " Use ctrl-[hjkl] to select the active split!
-nmap <silent> <c-k> :wincmd k<CR>                                                                                                                       
-nmap <silent> <c-j> :wincmd j<CR>                                                                                                                       
-nmap <silent> <c-h> :wincmd h<CR>                                                                                                                       
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
 set wmh=0                         " Truly minimize splits
@@ -48,7 +48,7 @@ set nobackup                      " Don't make a backup before overwriting a fil
 set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
-" UNCOMMENT TO USE
+autocmd BufWritePre <buffer> StripWhitespace
 set tabstop=2                    " Global tab width.
 set softtabstop=2
 set shiftwidth=2                 " And again, related.
