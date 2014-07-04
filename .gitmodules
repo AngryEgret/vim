@@ -13,9 +13,6 @@
 [submodule "solarized"]
 	path = bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "vim-indent-guides"]
-	path = vim-indent-guides
-	url = https://github.com/nathanaelkane/vim-indent-guides.git
 [submodule "bundle/vim-better-whitespace"]
 	path = bundle/vim-better-whitespace
   url = https://github.com/ntpeters/vim-better-whitespace.git
