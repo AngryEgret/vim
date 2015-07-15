@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-DEFAULT_USER=rgreget
+DEFAULT_USER=`whoami`
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -49,15 +49,12 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bundler common-aliases gem knife rails ruby rvm zeus)
+plugins=(git bundler common-aliases gem rails ruby rvm brew pip python)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/Users/rgreget/.rvm/gems/ruby-2.1.2/bin:/Users/rgreget/.rvm/gems/ruby-2.1.2@global/bin:/Users/rgreget/.rvm/rubies/ruby-2.1.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/rgreget/.rvm/bin:/Users/rgreget/.rvm/bin:/Users/rgreget/.rvm/bin:/Users/rgreget/code/keyringer"
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -75,3 +72,8 @@ export PATH="/usr/local/bin:/Users/rgreget/.rvm/gems/ruby-2.1.2/bin:/Users/rgreg
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+source "/usr/local/bin/virtualenvwrapper.sh"
+source $HOME/.rvm/scripts/rvm
+
+setopt no_share_history

@@ -1,27 +1,33 @@
-" Example Vim configuration.
 " Copy or symlink to ~/.vimrc or ~/_vimrc.
 
-set nocompatible                  " Must come first because it changes other options.
+call plug#begin('~/.vim/plugged')
 
-silent! call pathogen#runtime_append_all_bundles()
+Plug 'tpope/vim-sensible'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'klen/python-mode'
+Plug 'altercation/vim-colors-solarized'
+Plug 'ervandew/supertab'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'kchmck/vim-coffee-script'
+Plug 'pangloss/vim-javascript'
+Plug 'airblade/vim-rooter'
 
-syntax enable                     " Turn on syntax highlighting.
+call plug#end()
+
 filetype plugin indent on         " Turn on file type detection.
 
-set showcmd                       " Display incomplete commands.
+set background=dark
+colorscheme solarized
+
 set showmode                      " Display the mode you're in.
-
-set backspace=indent,eol,start    " Intuitive backspacing.
-
-set hidden                        " Handle multiple buffers better.
-
-set wildmenu                      " Enhanced command line completion.
-set wildmode=list:longest         " Complete files like a shell.
+set number                        " Show line numbers.
 
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 
-set number                        " Show line numbers.
 set ruler                         " Show cursor position.
 
 set incsearch                     " Highlight matches as you type.
@@ -44,10 +50,6 @@ nmap <silent> <c-l> :wincmd l<CR>
 
 set wmh=0                         " Truly minimize splits
 
-set nobackup                      " Don't make a backup before overwriting a file.
-set nowritebackup                 " And again.
-set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
-
 autocmd BufWritePre <buffer> StripWhitespace
 set tabstop=2                    " Global tab width.
 set softtabstop=2
@@ -68,9 +70,6 @@ set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
 set statusline+=%b,0x%-8B\                   " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
-set background=dark
-colorscheme solarized
-
 " Tab mappings.
 map <leader>tt :tabnew<cr>
 map <leader>te :tabedit
@@ -83,3 +82,4 @@ map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
 map <C-n> :NERDTreeToggle<CR>
+
