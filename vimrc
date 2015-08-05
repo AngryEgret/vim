@@ -41,6 +41,7 @@ set title                         " Set the terminal's title
 set visualbell                    " No beeping.
 
 set mouse=a                       " Mouse integration
+set nofoldenable
 
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
