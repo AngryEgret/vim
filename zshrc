@@ -6,7 +6,7 @@ DEFAULT_USER=`whoami`
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="wezm"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -14,6 +14,10 @@ ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -27,8 +31,8 @@ ZSH_THEME="agnoster"
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment the following line to disable command auto-correction.
-# DISABLE_CORRECTION="true"
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -49,7 +53,7 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bundler common-aliases gem rails ruby rvm brew pip python docker)
+plugins=(git common-aliases brew pip python docker aws)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -73,7 +77,17 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-source "/usr/local/bin/virtualenvwrapper.sh"
-source $HOME/.rvm/scripts/rvm
-
 setopt no_share_history
+
+source "/usr/local/bin/virtualenvwrapper.sh"
+alias loadrvm="source $HOME/.rvm/scripts/rvm && export PATH=\"$PATH:$HOME/.rvm/bin\""
+export NVM_DIR="/Users/ryangreget/.nvm"
+alias loadnvm=". $NVM_DIR/nvm.sh"
+
+alias kube-prod-east="kubectl --kubeconfig ~/kube-creds/kube-prod-east-136/kubeconfig"
+alias kube-prod-west="kubectl --kubeconfig ~/kube-creds/kube-prod-west-136/kubeconfig"
+alias kube-jenkins-west="kubectl --kubeconfig ~/kube-creds/kube-jenkins-west-136/kubeconfig"
+alias kube-dev-west="kubectl --kubeconfig ~/kube-creds/kube-dev-west-136/kubeconfig"
+
+export GOPATH=$HOME/code/go
+

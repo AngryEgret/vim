@@ -6,7 +6,5 @@ bind a send-prefix
 bind "\"" split-window -c '#{pane_current_path}'
 bind "\%" split-window -h -c '#{pane_current_path}'
 
-set -g mode-mouse on
-set -g mouse-resize-pane on
-set -g mouse-select-pane on
-set -g mouse-select-window on
+set-option -g mouse on
+run-shell ~/code/tmux-better-mouse-mode/scroll_copy_mode.tmux
